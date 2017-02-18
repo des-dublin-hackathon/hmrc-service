@@ -28,6 +28,12 @@ public class AppController {
         return "step2";
     }
 
+    @RequestMapping(value = "/bankofapis", method = RequestMethod.GET)
+    public String bankofapis() {        return "bankofapis";    }
+
+    @RequestMapping(value = "/statements", method = RequestMethod.GET)
+    public String statements() {        return "statements";    }
+
     @RequestMapping(value = "/step3", method = RequestMethod.GET)
     public String step3() {
         return "step3";
