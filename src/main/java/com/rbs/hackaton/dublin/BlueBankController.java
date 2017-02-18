@@ -1,34 +1,40 @@
 package com.rbs.hackaton.dublin;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
-import org.apache.oltu.oauth2.client.OAuthClient;
-import org.apache.oltu.oauth2.client.URLConnectionClient;
+import com.rbs.hackaton.dublin.model.AccountInformation;
+import com.rbs.hackaton.dublin.model.Customer;
+import com.rbs.hackaton.dublin.service.BlueBankService;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
-import org.apache.oltu.oauth2.client.response.OAuthAuthzResponse;
-import org.apache.oltu.oauth2.client.response.OAuthJSONAccessTokenResponse;
 import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
-import org.apache.oltu.oauth2.common.message.types.GrantType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
 public class BlueBankController {
 
+    @Autowired
+    private BlueBankService service;
+
+
+    @RequestMapping(value = "/banks/holder", method = RequestMethod.GET)
+    public Customer getCustomer(@CookieValue("jwt") String token) {
+
+        return service.getCustomer(token);
+    }
+
+    @RequestMapping(value = "/banks/accountInfo", method = RequestMethod.GET)
+    public List<AccountInformation> getAccountInformation(@CookieValue("jwt") String token) {
+
+        return service.getAccountInformation(token);
+    }
 
     @RequestMapping(value = "/banks/bluebank", method = RequestMethod.GET)
     public String auth(HttpServletRequest request, HttpServletResponse response,
