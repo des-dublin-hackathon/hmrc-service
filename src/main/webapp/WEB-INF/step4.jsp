@@ -289,7 +289,7 @@
           <div id="u611_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u612" class="text">
-            <p><span><a href="step5">Upload document</a></span></p>
+            <p><span><a style="text-decoration: none;" href="step5">Upload document</a></span></p>
           </div>
         </div>
       </div>
@@ -374,7 +374,7 @@
           <div id="u630_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u631" class="text">
-            <p><span><a href="step5">Upload document</a></span></p>
+            <p><span><a style="text-decoration: none;" href="step5">Upload document</a></span></p>
           </div>
         </div>
       </div>

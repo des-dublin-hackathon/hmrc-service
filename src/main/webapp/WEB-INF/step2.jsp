@@ -407,7 +407,7 @@
           <div id="u250_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u251" class="text">
-            <p><span><a href="/banks/bluebank">Access Account</a></span></p>
+            <p><span><a style="text-decoration: none;" href="/banks/bluebank">Access Account</a></span></p>
           </div>
         </div>
       </div>

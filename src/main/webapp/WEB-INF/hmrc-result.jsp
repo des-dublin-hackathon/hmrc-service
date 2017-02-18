@@ -281,7 +281,7 @@
           <div id="u526_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u527" class="text">
-            <p><span><a href="step4">Save and continue</a></span></p>
+            <p><span><a style="text-decoration: none;" href="step4">Save and continue</a></span></p>
           </div>
         </div>
       </div>

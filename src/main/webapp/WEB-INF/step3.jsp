@@ -280,7 +280,7 @@
           <div id="u449_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u450" class="text">
-            <p><span><a href="/hmrcincome">Get verification</a></span></p>
+            <p><span><a style="text-decoration: none;" href="/hmrcincome">Get verification</a></span></p>
           </div>
         </div>
       </div>
