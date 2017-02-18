@@ -49,5 +49,15 @@ public class AppController {
         return "step5";
     }
 
+    @RequestMapping(value = "/step6", method = RequestMethod.GET)
+    public String step6() {
+        return "step6";
+    }
+
+    @RequestMapping(value = "/final", method = RequestMethod.GET)
+    public String finalStep() {
+        return "final";
+    }
+
 
 }

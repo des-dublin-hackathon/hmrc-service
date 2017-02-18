@@ -27,10 +27,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/hmrc")
 public class HmrcController {
 
-    @RequestMapping(value = "/income", method = RequestMethod.GET)
+    @RequestMapping(value = "/hmrcincome", method = RequestMethod.GET)
     public String income(HttpServletRequest request, HttpServletResponse response,
                          @RequestParam(value = "code", required = false) String authCode,
                          ModelMap modelMap) throws OAuthSystemException, IOException, OAuthProblemException {
@@ -40,7 +39,7 @@ public class HmrcController {
         String clientSecret = "26b545bb-5869-4af8-9902-b1a02d210b50";
 //        String scope = "hello";
         String scope = "read:individual-income";
-        String redirectUri = "https://localhost:8080/hmrc/income";
+        String redirectUri = "https://localhost:8080/hmrcincome";
 
         if (StringUtils.isEmpty(authCode)) {
             //request auth

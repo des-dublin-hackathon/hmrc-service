@@ -377,7 +377,7 @@
           <div id="u344_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u345" class="text">
-            <p><span>Save and continue</span></p>
+            <p><span><a href="step3">Save and continue</a></span></p>
           </div>
         </div>
       </div>
