@@ -504,7 +504,7 @@
           <div id="u840_div" class=""></div>
           <!-- Unnamed () -->
           <div id="u841" class="text">
-            <p><span><a href="final">Submit</a></span></p>
+            <p><span><a style="text-decoration: none;" href="final">Submit</a></span></p>
           </div>
         </div>
       </div>
