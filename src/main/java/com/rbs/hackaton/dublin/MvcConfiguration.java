@@ -24,5 +24,4 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-
 }
