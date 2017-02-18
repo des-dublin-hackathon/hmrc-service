@@ -364,15 +364,16 @@
         <!-- Unnamed () -->
         <div id="u545" class="text">
             <div>
-            Employments:<br/><br/>
+            <b>Employments:</b><br/>
                 <c:forEach items="${hmrcResult.employments}" var="emp">
-                    ${emp.employerPayeReference}:  GBP ${emp.payFromEmployment}<br>
+                    <b>${emp.employerPayeReference} (${emp.name}):</b>  GBP ${emp.payFromEmployment}<br>
                 </c:forEach>
 
                 <br/>
-                Pensions: GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.otherPensionsAndRetirementAnnuities}<br/>
-                Incapacity: GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.incapacityBenefit}<br/>
-                Joseekers: GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.jobseekersAllowance}<br/>
+                <b>Other income:</b><br/>
+                <b>Pensions:</b> GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.otherPensionsAndRetirementAnnuities}<br/>
+                <b>Incapacity:</b> GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.incapacityBenefit}<br/>
+                <b>Joseekers:</b> GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.jobseekersAllowance}<br/>
 
 
             </div>

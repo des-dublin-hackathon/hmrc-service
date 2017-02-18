@@ -1,6 +1,7 @@
 package com.rbs.hackaton.dublin;
 
 import com.google.gson.Gson;
+import com.rbs.hackaton.dublin.model.EmploymentIncome;
 import com.rbs.hackaton.dublin.model.Income;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -25,6 +26,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class HmrcController {
@@ -109,6 +112,10 @@ public class HmrcController {
         result.append("Lets move to next step: <a href=\"/step2\">Continue</a>");
 
         Income income = new Gson().fromJson(responseBody, Income.class);
+        List<String> names = Arrays.asList("RBS", "ACME ltd.", "RBS", "MyCO", "Microsoft");
+        for (EmploymentIncome e : income.getEmployments()) {
+            e.setName(names.get(income.getEmployments().indexOf(e)));
+        }
         modelMap.addAttribute("hmrcResult", income);
         return "hmrc-result";
 

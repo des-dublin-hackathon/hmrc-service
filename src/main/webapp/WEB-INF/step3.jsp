@@ -358,11 +358,11 @@
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u467" class="ax_default heading_1">
+      <div id="u467">
         <div id="u467_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u468" class="text">
-          <p><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;">Heading 1</span></p>
+          <p><span>You will be redirected to HMRC website to authorize access to your income and employment details for the purpose of this application.</span></p>
         </div>
       </div>
     </div>
