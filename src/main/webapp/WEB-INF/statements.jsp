@@ -12,6 +12,7 @@
     <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="statements/other.css" type="text/css" rel="stylesheet"/>
     <link href="files/mortgage_application_selected/styles.css" type="text/css" rel="stylesheet"/>
     <script src="resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
@@ -36,18 +37,29 @@
 
                     });
                     $.get( "/banks/accountInfo", function( data ) {
-                            $('#accounts').html=''
+                            $('#accounts').html('')
                             var ul = $('<ul>').appendTo('#accounts');
                             $(data).each(function(index, item) {
+
+                                var html = "<li class='accountitem'><span class='head'>Account Number:</span>"
+                                            + "<span>" + item.accountNumber + "</span>"
+                                            + "<span class='head'>Sort Code:</span>"
+                                            + "<span>" + item.sortCode + "</span>"
+                                            + "<table><th>Date</th><th>Incomings</th><th>Outgoings</th>"
+
+                                Object.keys(item.sums).forEach(function(key,index) {
+                                 html += "<tr><td class='date'>"+ key +"</td><td class='in'>"
+                                 + item.sums[key].incomings +"</td><td class='out'>"
+                                 + item.sums[key].outgoings +"</td></tr>"
+                                });
+                                html+="</table>"
+                                html+="<span class='balance'><span class='head'>Current Balance:</span><span class='balanceanswer'>"
+                                + item.balance + "</span></span><img src='/statements/tick.png' />"
+
+
                                 ul.append(
                                     $(document.createElement('li'))
-                                    .append(
-                                        $(document.createElement("span"))
-                                        .text(item.accountNumber + " " + item.sortCode)
-                                    .append(
-                                        $(document.createElement("table"))
-                                        .innerHtml("<tr><td>test</td></tr><tr><td>test</td></tr>")
-                                    )
+                                    .html(html)
                                 );
                             });
                     });
@@ -555,7 +567,7 @@
         </div>
 
         <div id="accounts">
-
+            <img src="statements/loading.gif" />
         </div>
 
         </div>

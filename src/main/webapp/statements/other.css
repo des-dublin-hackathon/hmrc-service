@@ -1,0 +1,58 @@
+﻿.accountitem{
+    font-weight:normal;
+    margin-top:30px;
+}
+.accountitem .head{
+    font-weight:bold;
+    margin:3px 10px
+}
+.accountitem table{
+    border:1px solid black;
+    border-collapse: collapse;
+    margin:10px 0px 5px 10px;
+}
+
+.accountitem table th,td{
+    border:1px solid black;
+    border-collapse:collapse;
+    padding:3px 15px;
+    background-color:white;
+}
+.accountitem table th{
+    background-color:aliceblue;
+}
+.accountitem table td.in{
+    color:green;
+}
+.accountitem table td.out{
+    color:red;
+}
+.accountitem .balance{
+    width:238px;
+    display:block;
+    margin-left:30px;
+    font-weight:bold;
+}
+.accountitem .balance .head{
+ margin-left:50px
+}
+.accountitem .balanceanswer{
+    font-weight:bold;
+    font-size:11pt;
+    margin-left:0px;
+    color:green;
+    float:right;
+}
+.customer span{
+    font-weight:bold;
+    display:inline-block;
+    width:100px;
+    margin-left:50px;
+}
+.customer #customer_name, #customer_address,#customer_phone{
+    font-weight:normal;
+    width:200px;
+}
+.accountitem img{
+    margin-left:230px;
+}
