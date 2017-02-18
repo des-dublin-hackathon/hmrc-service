@@ -20,9 +20,16 @@ public class AccountInformation {
     @JsonProperty("balance")
     private BigDecimal balance;
 
-    @JsonProperty("incomings")
-    private Map<String, BigDecimal> monthlyIncomings;
+    @JsonProperty("sums")
+    private Map<String, Pair> monthlySums;
 
-    @JsonProperty("outgoings")
-    private Map<String, BigDecimal>  monthlyOutgoings;
+    @Data
+    @Accessors(fluent = true)
+    public static class Pair {
+
+        @JsonProperty("incomings")
+        private BigDecimal incomings = BigDecimal.ZERO;
+        @JsonProperty("outgoings")
+        private BigDecimal outgoings = BigDecimal.ZERO;
+    }
 }

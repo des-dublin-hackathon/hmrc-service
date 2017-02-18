@@ -65,25 +65,28 @@ public class BlueBankService {
         return transactions.results();
     }
 
-    Map<String, BigDecimal> sortByMonth(List<Transaction> transactions, boolean incoming) {
+    Map<String, AccountInformation.Pair> sortByMonth(List<Transaction> transactions) {
 
-        Map<String, BigDecimal> byMonth = new LinkedHashMap<>();
-        transactions.stream().filter(t -> incoming ?
-                t.amount().compareTo(BigDecimal.ZERO) >= 0 :
-                t.amount().compareTo(BigDecimal.ZERO) < 0)
-            .forEach(t -> {
-                GregorianCalendar cal = null;
-                try {
-                    cal = new GregorianCalendar();
-                    cal.setTime(DATE_FORMAT.parse(t.timestamp()));
-                } catch (ParseException e) {
-                    // ignore for the demo
-                }
-                String key = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1);
+        Map<String, AccountInformation.Pair> byMonth = new TreeMap<>();
+        transactions.stream()
+                .forEach(t -> {
+                    GregorianCalendar cal = null;
+                    try {
+                        cal = new GregorianCalendar();
+                        cal.setTime(DATE_FORMAT.parse(t.timestamp()));
+                    } catch (ParseException e) {
+                        // ignore for the demo
+                    }
+                    String key = cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1);
 
-                BigDecimal current = byMonth.getOrDefault(key, BigDecimal.ZERO);
-                byMonth.put(key, current.add(t.amount()));
-            });
+                    AccountInformation.Pair current = byMonth.getOrDefault(key, new AccountInformation.Pair());
+                    if (t.amount().compareTo(BigDecimal.ZERO) >= 0) {
+                        current.incomings(current.incomings().add(t.amount()));
+                    } else {
+                        current.outgoings(current.outgoings().add(t.amount()));
+                    }
+                    byMonth.put(key, current);
+                });
 
         return byMonth;
     }
@@ -97,8 +100,7 @@ public class BlueBankService {
 
         List<Transaction> transactions = getTransactions(account.id(), token);
 
-        info.monthlyIncomings(sortByMonth(transactions, true));
-        info.monthlyOutgoings(sortByMonth(transactions, true));
+        info.monthlySums(sortByMonth(transactions));
 
         return info;
     }
