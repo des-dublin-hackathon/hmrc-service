@@ -36,7 +36,7 @@ public class BlueBankService {
     public List<AccountInformation> getAccountInformation(String token) {
 
         Customer customer = getCustomer(token);
-        List<Account> accounts = getAccounts(customer.id(), token);
+        List<Account> accounts = getAccounts(customer.getId(), token);
         return accounts.stream().map(account -> getInformation(account, token)).collect(Collectors.toList());
     }
 

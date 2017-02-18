@@ -349,7 +349,7 @@
         <img id="u805_img" class="img " src="images/mortgage_application_personal_details/u805.png"/>
         <!-- Unnamed () -->
         <div id="u806" class="text">
-          <p><span>Stelios</span></p>
+          <p><span>${customer.givenName}</span></p>
         </div>
       </div>
 
@@ -385,7 +385,7 @@
         <img id="u813_img" class="img " src="images/mortgage_application_personal_details/u813.png"/>
         <!-- Unnamed () -->
         <div id="u814" class="text">
-          <p><span>078 1234 1234 </span></p>
+          <p><span>${customer.mobilePhone}</span></p>
         </div>
       </div>
 
@@ -394,7 +394,7 @@
         <img id="u815_img" class="img " src="images/mortgage_application_personal_details/u815.png"/>
         <!-- Unnamed () -->
         <div id="u816" class="text">
-          <p><span>EC1B 2AB</span></p>
+          <p><span>${customer.postCode}</span></p>
         </div>
       </div>
 
@@ -403,7 +403,7 @@
         <img id="u817_img" class="img " src="images/mortgage_application_personal_details/u815.png"/>
         <!-- Unnamed () -->
         <div id="u818" class="text">
-          <p><span>Somebody</span></p>
+          <p><span>${customer.familyName}</span></p>
         </div>
       </div>
 

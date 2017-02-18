@@ -24,7 +24,7 @@ public class BlueBankServiceTest {
     public void shouldFetchCustomer() {
         Customer cust = service.getCustomer(TOKEN);
 
-        assertThat(cust.givenName(), is("Stelios"));
+        assertThat(cust.getGivenName(), is("Stelios"));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class BlueBankServiceTest {
         Customer cust = service.getCustomer(TOKEN);
 
         // act
-        List<Account> accounts = service.getAccounts(cust.id(), TOKEN);
+        List<Account> accounts = service.getAccounts(cust.getId(), TOKEN);
 
         // assert
         assertThat(accounts.size(), is(3));
@@ -44,7 +44,7 @@ public class BlueBankServiceTest {
     public void shouldFetchTransactions() {
         // arrange
         Customer cust = service.getCustomer(TOKEN);
-        Account acc = service.getAccounts(cust.id(), TOKEN).get(0);
+        Account acc = service.getAccounts(cust.getId(), TOKEN).get(0);
 
         // act
         List<Transaction> transactions = service.getTransactions(acc.id(), TOKEN);
