@@ -20,6 +20,6 @@ Employments:<br/>
     Joseekers: GBP ${hmrcResult.pensionsAnnuitiesAndOtherStateBenefits.jobseekersAllowance}<br/>
 
 
-    Lets move to next step: <a href="/step2">Continue</a>
+    Lets move to next step: <a href="/step4">Continue</a>
 </body>
 </html>
