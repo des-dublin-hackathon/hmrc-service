@@ -232,7 +232,7 @@
         <div id="u888_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u889" class="text">
-          <p><span>Congratulations!</span></p>
+          <p style="margin-left:55px;"><span>Congratulations!</span></p>
         </div>
       </div>
 
@@ -241,7 +241,7 @@
         <div id="u890_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u891" class="text">
-          <p><span>Mortgage approved.</span></p>
+          <p style="margin-left:55px;"><span>Mortgage approved.</span></p>
           <img src="/statements/kerpow.png" alt="kerpow"/>
 
         </div>
