@@ -362,7 +362,7 @@
         <div id="u467_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u468" class="text">
-          <p><span>You will be redirected to HMRC website to authorize access to your income and employment details for the purpose of this application.</span></p>
+          <p style="color:#430F61;font-family: 'ArialMT', 'Arial';font-size: 14px;"><span>You will be redirected to HMRC website to authorize access to your income and employment details for the purpose of this application.</span></p>
         </div>
       </div>
     </div>
